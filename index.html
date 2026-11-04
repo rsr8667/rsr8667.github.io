@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rahul Rawat's Data Analytics Portfolio featuring Power BI, SQL, Excel and Python projects.">
+  <title>Rahul Rawat | Data Analytics Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #121d30;
+      --panel-light: #18263d;
+      --text: #edf3ff;
+      --muted: #a9b8cf;
+      --accent: #55d6be;
+      --accent-2: #82aaff;
+      --border: rgba(169, 184, 207, 0.18);
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .container { width: min(92%, var(--max-width)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 18, 32, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { font-weight: 800; letter-spacing: 0.2px; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 20px; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.94rem;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero { padding: 92px 0 76px; }
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    h1 {
+      max-width: 800px;
+      margin: 14px 0;
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      line-height: 1.06;
+    }
+    h1 span { color: var(--accent); }
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #07151a;
+    }
+    .button.secondary { background: transparent; color: var(--text); border-color: var(--border); }
+    section { padding: 58px 0; }
+    .section-heading { margin-bottom: 24px; }
+    .section-heading h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 0 0 7px; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .about, .project, .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+    }
+    .about p { color: var(--muted); margin: 0; }
+    .project-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; }
+    .project-image {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--panel-light);
+      min-height: 220px;
+      object-fit: cover;
+    }
+    .image-note { color: var(--muted); font-size: 0.82rem; margin: 8px 0 0; }
+    .project h3 { font-size: 1.5rem; margin: 0 0 10px; }
+    .project p, .project li { color: var(--muted); }
+    .project ul { padding-left: 20px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #c9fff3;
+      background: rgba(85, 214, 190, 0.1);
+      border: 1px solid rgba(85, 214, 190, 0.25);
+      font-size: 0.82rem;
+    }
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: var(--text);
+    }
+    .contact-card p { color: var(--muted); }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .contact-links a { color: var(--accent); text-decoration: none; font-weight: 700; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      nav { gap: 14px; }
+      .hero { padding: 66px 0 48px; }
+      .project-grid { grid-template-columns: 1fr; }
+      section { padding: 42px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Rahul <span>Rawat</span></div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Data Analytics Portfolio</div>
+        <h1>Hi, I'm Rahul Rawat.<br><span>Aspiring Data Analyst.</span></h1>
+        <p>
+          I enjoy exploring data, identifying patterns, and presenting information
+          through clear, interactive dashboards. I'm developing my skills in
+          Power BI, SQL, Excel, and Python.
+        </p>
+        <div class="actions">
+          <a class="button" href="#projects">Explore My Projects</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/rahul-rawat817810/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About Me</h2>
+          <p>A little about my learning journey and interests.</p>
+        </div>
+        <div class="about">
+          <p>
+            I'm Rahul Rawat, an aspiring Data Analyst building practical skills
+            in data analysis and business intelligence. I use hands-on projects
+            to practise turning datasets into useful insights and communicating
+            findings with visual reports. This portfolio documents my projects
+            and progress as I continue learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Project</h2>
+          <p>Selected work from my data analytics learning journey.</p>
+        </div>
+
+        <article class="project">
+          <div class="project-grid">
+            <div>
+              <!--
+                IMPORTANT:
+                Upload your dashboard screenshot to this GitHub repository.
+                Name it mobile-sales-dashboard.png and place it beside index.html.
+                If you use a different filename, update the src below.
+              -->
+              <img
+                class="project-image"
+                src="mobile-sales-dashboard.png"
+                alt="Screenshot of Rahul Rawat's Power BI mobile sales dashboard"
+                onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='block';"
+              >
+              <div id="image-placeholder" class="about" style="display:none; min-height:220px; text-align:center; align-content:center;">
+                <strong>Dashboard screenshot goes here</strong>
+                <p>Upload your screenshot as <code>mobile-sales-dashboard.png</code> to this repository.</p>
+              </div>
+              <p class="image-note">Power BI dashboard preview. Add your screenshot to the repository to display it here.</p>
+            </div>
+
+            <div>
+              <h3>Mobile Sales Dashboard</h3>
+              <div class="tags">
+                <span class="tag">Power BI</span>
+                <span class="tag">Data Visualization</span>
+                <span class="tag">Sales Analytics</span>
+              </div>
+              <p>
+                An interactive sales dashboard created to explore mobile phone
+                sales performance and present key metrics in an easy-to-understand
+                visual format.
+              </p>
+              <strong>Dashboard features</strong>
+              <ul>
+                <li>Sales KPIs, including total sales, quantity, transactions, and average sales.</li>
+                <li>City-wise sales distribution.</li>
+                <li>Monthly quantity trends and day-wise sales patterns.</li>
+                <li>Customer rating and payment method analysis.</li>
+                <li>Brand and mobile model comparisons.</li>
+              </ul>
+              <strong>Project objective</strong>
+              <p>
+                To organise sales information into a clear report that helps
+                viewers explore performance across locations, time periods,
+                products, customer ratings, and payment methods.
+              </p>
+              <p><strong>Tools:</strong> Microsoft Power BI</p>
+              <p class="image-note">
+                Note: This is a learning project. The observations and conclusions
+                should be added after reviewing the actual report data.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Skills & Tools</h2>
+          <p>Tools I'm learning and using in practical exercises.</p>
+        </div>
+        <div class="skills">
+          <div class="skill">Power BI</div>
+          <div class="skill">SQL</div>
+          <div class="skill">Microsoft Excel</div>
+          <div class="skill">Data Visualization</div>
+          <div class="skill">Python — Learning</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Let's Connect</h2>
+          <p>Feel free to connect with me professionally.</p>
+        </div>
+        <div class="contact-card">
+          <p>I'm always interested in learning, collaborating, and exploring opportunities in data analytics.</p>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/rahul-rawat817810/" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+            <a href="https://github.com/rsr8667" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Rahul Rawat · Data Analytics Portfolio</div>
+  </footer>
+</body>
+</html>
